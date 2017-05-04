@@ -1,3 +1,5 @@
-import { addDragObject, removeDragObject } from './src/interactions/Drag'
 
-export { addDragObject, removeDragObject }
+module.exports = {
+  blah: 'blah',
+}
+
