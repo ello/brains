@@ -8,13 +8,36 @@
   "files": [
     "dist"
   ],
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ],
+    "plugins": [
+      "lodash",
+      "transform-flow-strip-types"
+    ]
+  },
   "scripts": {
-    "build": "babel src --presets babel-preset-env --out-dir dist",
-    "build:watch": "babel src --presets babel-preset-env --out-dir dist --watch",
+    "build": "babel src --out-dir dist",
+    "build:watch": "babel src --out-dir dist --watch",
     "copypackage": "cp -rf package.json dist"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
-    "babel-preset-env": "1.4.0"
+    "babel-plugin-lodash": "3.2.11",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-preset-env": "1.4.0",
+    "babel-preset-stage-0": "6.24.1",
+    "flow-bin": "0.45.0"
+  },
+  "dependencies": {
+    "humps": "2.0.0",
+    "immutable": "3.8.1",
+    "lodash": "4.17.4",
+    "react-router-redux": "4.0.8",
+    "redux-persist": "4.8.0",
+    "reselect": "3.0.1",
+    "trunc-html": "1.1.2"
   }
 }

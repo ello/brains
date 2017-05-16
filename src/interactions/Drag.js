@@ -1,3 +1,4 @@
+// @flow
 const dragObjects = []
 const dragThreshold = 5
 let dragX = 0
@@ -27,6 +28,20 @@ function reset() {
   totalDrag = 0
   totalDragX = 0
   totalDragY = 0
+}
+
+export type DragProps = {
+  dragX: number,
+  dragY: number,
+  dragged: boolean,
+  lastDragX: number,
+  lastDragY: number,
+  lastX: number,
+  lastY: number,
+  target: Element,
+  totalDrag: number,
+  totalDragX: number,
+  totalDragY: number,
 }
 
 function callMethod(method) {
