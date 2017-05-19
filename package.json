@@ -5,9 +5,6 @@
   "main": "index.js",
   "repository": "https://github.com/ello/brains",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "babel": {
     "presets": [
       "env",
@@ -20,9 +17,8 @@
     ]
   },
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "build:watch": "babel src --out-dir dist --watch",
-    "copypackage": "cp -rf package.json dist"
+    "build": "babel src --out-dir ./",
+    "build:watch": "babel src --out-dir ./ --watch"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
