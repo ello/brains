@@ -437,6 +437,8 @@ export default function json(state = initialState, action = { type: '' }) {
   } else {
     if (mappingType === MAPPING_TYPES.COMMENTS) {
       response = methods.addParentPostIdToComments(response, state, action)
+    } else if (mappingType === MAPPING_TYPES.BADGES && response[MAPPING_TYPES.BADGES]) {
+      state = state.setIn([MAPPING_TYPES.BADGES], Immutable.fromJS(response[MAPPING_TYPES.BADGES]))
     }
     state = methods.updateResult(response, state, action)
   }
