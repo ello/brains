@@ -9,6 +9,7 @@ var ANNOUNCEMENTS = exports.ANNOUNCEMENTS = 'announcements';
 var ASSETS = exports.ASSETS = 'assets';
 var AUTO_COMPLETE_RESULT = exports.AUTO_COMPLETE_RESULT = 'autocomplete_results';
 var AVAILABILITY = exports.AVAILABILITY = 'availability';
+var BADGES = exports.BADGES = 'badges';
 var CATEGORIES = exports.CATEGORIES = 'categories';
 var COMMENTS = exports.COMMENTS = 'comments';
 var ERROR = exports.ERROR = 'error';

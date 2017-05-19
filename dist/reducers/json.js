@@ -493,6 +493,8 @@ function json() {
   } else {
     if (mappingType === MAPPING_TYPES.COMMENTS) {
       response = methods.addParentPostIdToComments(response, state, action);
+    } else if (mappingType === MAPPING_TYPES.BADGES && response[MAPPING_TYPES.BADGES]) {
+      state = state.setIn([MAPPING_TYPES.BADGES], _immutable2.default.fromJS(response[MAPPING_TYPES.BADGES]));
     }
     state = methods.updateResult(response, state, action);
   }
