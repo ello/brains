@@ -36,8 +36,8 @@
     "immutable": "3.8.1",
     "lodash": "4.17.4",
     "react-router-redux": "4.0.8",
-    "redux-persist": "4.8.0",
-    "reselect": "3.0.1",
+    "redux-persist": "4.7.1",
+    "reselect": "3.0.0",
     "trunc-html": "1.1.2"
   }
 }
