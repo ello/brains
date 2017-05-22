@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectPostDetailTabs = exports.selectPostShowCommentEditor = exports.selectPostShowEditor = exports.selectPostRepostAuthorWithFallback = exports.selectPostRepostAuthor = exports.selectPostIsWatching = exports.selectPostIsReposting = exports.selectPostIsRepost = exports.selectPostIsOwnOriginal = exports.selectPostIsOwn = exports.selectPostIsGridMode = exports.selectPostIsEmpty = exports.selectPostIsEditing = exports.selectPostIsCommentsRequesting = exports.selectPostDetailPath = exports.selectPostCategorySlug = exports.selectPostCategoryName = exports.selectPostCategory = exports.selectPostCategories = exports.selectPostRepostAuthorId = exports.selectPostHasRelatedButton = exports.selectPostAuthorHasCommentingEnabled = exports.selectPostAuthorUsername = exports.selectPostAuthor = exports.selectPostMetaUrl = exports.selectPostMetaTitle = exports.selectPostMetaRobots = exports.selectPostMetaImages = exports.selectPostMetaEmbeds = exports.selectPostMetaCanonicalUrl = exports.selectPostMetaDescription = exports.selectPostWatching = exports.selectPostViewsCountRounded = exports.selectPostViewsCount = exports.selectPostToken = exports.selectPostSummary = exports.selectPostShowComments = exports.selectPostRepostsCount = exports.selectPostReposted = exports.selectPostRepostId = exports.selectPostRepostContent = exports.selectPostLovesCount = exports.selectPostLoved = exports.selectPostMetaAttributes = exports.selectPostIsAdultContent = exports.selectPostId = exports.selectPostHref = exports.selectPostCreatedAt = exports.selectPostContentWarning = exports.selectPostContent = exports.selectPostCommentsCount = exports.selectPostBody = exports.selectPostAuthorId = exports.addAssetToRegion = exports.selectPost = exports.selectPosts = exports.selectPropsLocationStateFrom = exports.selectPropsPostIsRelated = exports.selectPropsPostId = undefined;
+exports.selectPostFirstImage = exports.selectPostDetailTabs = exports.selectPostShowCommentEditor = exports.selectPostShowEditor = exports.selectPostRepostAuthorWithFallback = exports.selectPostRepostAuthor = exports.selectPostIsWatching = exports.selectPostIsReposting = exports.selectPostIsRepost = exports.selectPostIsOwnOriginal = exports.selectPostIsOwn = exports.selectPostIsGridMode = exports.selectPostIsEmpty = exports.selectPostIsEditing = exports.selectPostIsCommentsRequesting = exports.selectPostDetailPath = exports.selectPostCategorySlug = exports.selectPostCategoryName = exports.selectPostCategory = exports.selectPostCategories = exports.selectPostRepostAuthorId = exports.selectPostHasRelatedButton = exports.selectPostAuthorHasCommentingEnabled = exports.selectPostAuthorUsername = exports.selectPostAuthor = exports.selectPostMetaUrl = exports.selectPostMetaTitle = exports.selectPostMetaRobots = exports.selectPostMetaImages = exports.selectPostMetaEmbeds = exports.selectPostMetaCanonicalUrl = exports.selectPostMetaDescription = exports.selectPostWatching = exports.selectPostViewsCountRounded = exports.selectPostViewsCount = exports.selectPostToken = exports.selectPostSummary = exports.selectPostShowComments = exports.selectPostRepostsCount = exports.selectPostReposted = exports.selectPostRepostId = exports.selectPostRepostContent = exports.selectPostLovesCount = exports.selectPostLoved = exports.selectPostMetaAttributes = exports.selectPostIsAdultContent = exports.selectPostId = exports.selectPostHref = exports.selectPostCreatedAt = exports.selectPostContentWarning = exports.selectPostContent = exports.selectPostCommentsCount = exports.selectPostBody = exports.selectPostAuthorId = exports.addAssetToRegion = exports.selectPost = exports.selectPosts = exports.selectPropsLocationStateFrom = exports.selectPropsPostIsRelated = exports.selectPropsPostId = undefined;
 
 var _immutable = require('immutable');
 
@@ -319,4 +319,16 @@ var selectPostDetailTabs = exports.selectPostDetailTabs = (0, _reselect.createSe
   return [commentsLabel && { type: 'comments', children: commentsLabel }, lovesLabel && { type: 'loves', children: lovesLabel }, repostsLabel && { type: 'reposts', children: repostsLabel }].filter(function (tab) {
     return tab;
   });
+});
+
+var selectPostFirstImage = exports.selectPostFirstImage = (0, _reselect.createSelector)([selectPostSummary], function (blocks) {
+  if (blocks.isEmpty()) {
+    return _immutable2.default.Map();
+  }
+  return blocks.filter(function (block) {
+    return (/image/.test(block.get('kind')) && block.getIn(['asset', 'attachment'])
+    );
+  }).map(function (block) {
+    return block.getIn(['asset', 'attachment']);
+  }).first();
 });

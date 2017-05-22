@@ -9,6 +9,7 @@ export const CATEGORIES = 'categories'
 export const COMMENTS = 'comments'
 export const ERROR = 'error'
 export const ERRORS = 'errors'
+export const EDITORIALS = 'editorials'
 export const INVITATIONS = 'invitations'
 export const LOVES = 'loves'
 export const NOTIFICATIONS = 'notifications' /* this is only used internally */

@@ -14,6 +14,7 @@ var CATEGORIES = exports.CATEGORIES = 'categories';
 var COMMENTS = exports.COMMENTS = 'comments';
 var ERROR = exports.ERROR = 'error';
 var ERRORS = exports.ERRORS = 'errors';
+var EDITORIALS = exports.EDITORIALS = 'editorials';
 var INVITATIONS = exports.INVITATIONS = 'invitations';
 var LOVES = exports.LOVES = 'loves';
 var NOTIFICATIONS = exports.NOTIFICATIONS = 'notifications'; /* this is only used internally */

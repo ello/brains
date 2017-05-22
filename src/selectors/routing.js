@@ -24,17 +24,21 @@ export const selectPreviousPath = state => state.routing.get('previousPath')
 // state.routing.location.xxx
 export const selectPathname = state => state.routing.getIn(['location', 'pathname'])
 export const selectQueryTerms = state => state.routing.getIn(['location', 'terms'])
+export const selectQueryPreview = state => state.routing.getIn(['location', 'preview'])
 
 // Memoized selectors
 export const selectViewNameFromRoute = createSelector(
   [selectPathname, selectParamsUsername], (pathname, username) => {
+    if (pathname === '/') {
+      return 'editorial'
+    }
     if (/^\/following\b/.test(pathname)) {
       return 'following'
     }
     if (/^\/find\b|^\/search\b/.test(pathname)) {
       return 'search'
     }
-    if (pathname === '/' || /^\/discover\b|^\/explore\b/.test(pathname)) {
+    if (/^\/discover\b|^\/explore\b/.test(pathname)) {
       return 'discover'
     }
     if (/^\/invitations\b/.test(pathname)) {

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectIsDiscoverRoot = exports.selectIsPostDetail = exports.selectIsOnboardingView = exports.selectIsAuthenticationView = exports.selectViewNameFromRoute = exports.selectQueryTerms = exports.selectPathname = exports.selectPreviousPath = exports.selectLocation = exports.selectPropsQueryType = exports.selectPropsQueryTerms = exports.selectPropsPathname = exports.selectPropsLocationKey = undefined;
+exports.selectIsDiscoverRoot = exports.selectIsPostDetail = exports.selectIsOnboardingView = exports.selectIsAuthenticationView = exports.selectViewNameFromRoute = exports.selectQueryPreview = exports.selectQueryTerms = exports.selectPathname = exports.selectPreviousPath = exports.selectLocation = exports.selectPropsQueryType = exports.selectPropsQueryTerms = exports.selectPropsPathname = exports.selectPropsLocationKey = undefined;
 
 var _reselect = require('reselect');
 
@@ -48,16 +48,22 @@ var selectPathname = exports.selectPathname = function selectPathname(state) {
 var selectQueryTerms = exports.selectQueryTerms = function selectQueryTerms(state) {
   return state.routing.getIn(['location', 'terms']);
 };
+var selectQueryPreview = exports.selectQueryPreview = function selectQueryPreview(state) {
+  return state.routing.getIn(['location', 'preview']);
+};
 
 // Memoized selectors
 var selectViewNameFromRoute = exports.selectViewNameFromRoute = (0, _reselect.createSelector)([selectPathname, _params.selectParamsUsername], function (pathname, username) {
+  if (pathname === '/') {
+    return 'editorial';
+  }
   if (/^\/following\b/.test(pathname)) {
     return 'following';
   }
   if (/^\/find\b|^\/search\b/.test(pathname)) {
     return 'search';
   }
-  if (pathname === '/' || /^\/discover\b|^\/explore\b/.test(pathname)) {
+  if (/^\/discover\b|^\/explore\b/.test(pathname)) {
     return 'discover';
   }
   if (/^\/invitations\b/.test(pathname)) {

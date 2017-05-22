@@ -45,7 +45,7 @@ var selectCategoryData = exports.selectCategoryData = (0, _reselect.createSelect
 });
 
 var selectIsPagePromotion = exports.selectIsPagePromotion = (0, _reselect.createSelector)([_routing.selectViewNameFromRoute, _routing.selectPathname], function (viewName, pathname) {
-  return viewName === 'search' || viewName === 'discover' && pathname === '/' || viewName === 'discover' && pathname === '/discover' || viewName === 'discover' && pathname === '/discover/all' || viewName === 'discover' && /\/featured\b|\/trending\b|\/recent\b/.test(pathname);
+  return viewName === 'search' || viewName === 'discover' && pathname === '/discover' || viewName === 'discover' && pathname === '/discover/all' || viewName === 'discover' && /\/featured\b|\/trending\b|\/recent\b/.test(pathname);
 });
 
 var selectIsCategoryPromotion = exports.selectIsCategoryPromotion = (0, _reselect.createSelector)([_routing.selectViewNameFromRoute, selectIsPagePromotion], function (viewName, isPagePromotion) {
