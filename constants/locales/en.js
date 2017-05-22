@@ -8,7 +8,6 @@ var DISCOVER = exports.DISCOVER = {
   BEACON_VERSION: '1',
   BEACON_TEXT: 'Explore creators, curated categories and communities.'
 };
-var LOCAL_ENV = ENV || {};
 
 var ERROR_MESSAGES = exports.ERROR_MESSAGES = {
   NONE: '',
@@ -37,7 +36,7 @@ var FOLLOWING = exports.FOLLOWING = {
   BEACON_TEXT: 'Follow the creators and communities that inspire you.'
 };
 
-var FOOTER_LINKS = exports.FOOTER_LINKS = [{ label: 'About', to: LOCAL_ENV.AUTH_DOMAIN + '/wtf/about/ello/' }, { label: 'Help', to: LOCAL_ENV.AUTH_DOMAIN + '/wtf' }, { label: 'Blog', to: LOCAL_ENV.AUTH_DOMAIN + '/elloblog' }, { label: 'Magazine', to: 'https://notforprint.co/' }, { label: 'Shop', to: LOCAL_ENV.AUTH_DOMAIN + '/discover/shop' }, { label: 'Apps', to: LOCAL_ENV.AUTH_DOMAIN + '/wtf/resources/apps/' }, { label: 'Terms', to: LOCAL_ENV.AUTH_DOMAIN + '/wtf/policies/terms/' }, { label: 'Privacy', to: LOCAL_ENV.AUTH_DOMAIN + '/wtf/policies/privacy/' }];
+var FOOTER_LINKS = exports.FOOTER_LINKS = [{ label: 'About', to: '/wtf/about/ello/' }, { label: 'Help', to: '/wtf' }, { label: 'Blog', to: '/elloblog' }, { label: 'Magazine', to: 'https://notforprint.co/' }, { label: 'Shop', to: '/discover/shop' }, { label: 'Apps', to: '/wtf/resources/apps/' }, { label: 'Terms', to: '/wtf/policies/terms/' }, { label: 'Privacy', to: '/wtf/policies/privacy/' }];
 
 var META = exports.META = {
   ALL_PAGE_DESCRIPTION: 'Discover work on Ello in Art, Fashion, Photography, Design, Architecture, Illustration, GIFs, 3D, Writing, Music, Textile, Skate and Cycling.',
@@ -60,11 +59,11 @@ var META = exports.META = {
 var PREFERENCES = exports.PREFERENCES = {
   NSFW_VIEW: {
     term: 'View Adult Content',
-    desc: '<a href="' + LOCAL_ENV.AUTH_DOMAIN + '/wtf/post/rules" target="_blank">What does this mean?</a>'
+    desc: '<a href="/wtf/post/rules" target="_blank">What does this mean?</a>'
   },
   NSFW_POST: {
     term: 'Post Adult Content',
-    desc: '<a href="' + LOCAL_ENV.AUTH_DOMAIN + '/wtf/post/rules" target="_blank">What does this mean?</a>'
+    desc: '<a href="/wtf/post/rules" target="_blank">What does this mean?</a>'
   }
 };
 

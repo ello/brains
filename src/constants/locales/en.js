@@ -3,7 +3,6 @@ export const DISCOVER = {
   BEACON_VERSION: '1',
   BEACON_TEXT: 'Explore creators, curated categories and communities.',
 }
-const LOCAL_ENV = ENV || {}
 
 export const ERROR_MESSAGES = {
   NONE: '',
@@ -33,14 +32,14 @@ export const FOLLOWING = {
 }
 
 export const FOOTER_LINKS = [
-  { label: 'About', to: `${LOCAL_ENV.AUTH_DOMAIN}/wtf/about/ello/` },
-  { label: 'Help', to: `${LOCAL_ENV.AUTH_DOMAIN}/wtf` },
-  { label: 'Blog', to: `${LOCAL_ENV.AUTH_DOMAIN}/elloblog` },
+  { label: 'About', to: '/wtf/about/ello/' },
+  { label: 'Help', to: '/wtf' },
+  { label: 'Blog', to: '/elloblog' },
   { label: 'Magazine', to: 'https://notforprint.co/' },
-  { label: 'Shop', to: `${LOCAL_ENV.AUTH_DOMAIN}/discover/shop` },
-  { label: 'Apps', to: `${LOCAL_ENV.AUTH_DOMAIN}/wtf/resources/apps/` },
-  { label: 'Terms', to: `${LOCAL_ENV.AUTH_DOMAIN}/wtf/policies/terms/` },
-  { label: 'Privacy', to: `${LOCAL_ENV.AUTH_DOMAIN}/wtf/policies/privacy/` },
+  { label: 'Shop', to: '/discover/shop' },
+  { label: 'Apps', to: '/wtf/resources/apps/' },
+  { label: 'Terms', to: '/wtf/policies/terms/' },
+  { label: 'Privacy', to: '/wtf/policies/privacy/' },
 ]
 
 export const META = {
@@ -64,11 +63,11 @@ export const META = {
 export const PREFERENCES = {
   NSFW_VIEW: {
     term: 'View Adult Content',
-    desc: `<a href="${LOCAL_ENV.AUTH_DOMAIN}/wtf/post/rules" target="_blank">What does this mean?</a>`,
+    desc: '<a href="/wtf/post/rules" target="_blank">What does this mean?</a>',
   },
   NSFW_POST: {
     term: 'Post Adult Content',
-    desc: `<a href="${LOCAL_ENV.AUTH_DOMAIN}/wtf/post/rules" target="_blank">What does this mean?</a>`,
+    desc: '<a href="/wtf/post/rules" target="_blank">What does this mean?</a>',
   },
 }
 
