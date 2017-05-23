@@ -1,3 +1,5 @@
+danger.import_dangerfile github: 'ello/danger'
+
 # FAILURES
 # don't let testing shortcuts get into master by accident
 fail('.only left in test suite') if `grep -r -e '\w\.only' test/`.length > 0
