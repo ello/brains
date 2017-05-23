@@ -23,19 +23,31 @@
     "build": "babel src --out-dir ./",
     "build:watch": "babel src --out-dir ./ --watch",
     "flow": "flow",
-    "lint": "eslint src test"
+    "lint": "eslint src test",
+    "pretest": "yarn lint",
+    "test": "NODE_ENV=test mocha test/unit --recursive",
+    "test:watch": "NODE_ENV=test mocha test/unit --recursive --watch"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-plugin-lodash": "3.2.11",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-polyfill": "6.23.0",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
+    "chai": "3.5.0",
+    "chai-immutable": "1.6.0",
+    "chai-generator": "2.1.0",
+    "dotenv": "4.0.0",
     "eslint": "3.19.0",
     "eslint-config-ello": "1.0.3",
-    "flow-bin": "0.45.0"
+    "flow-bin": "0.45.0",
+    "jsdom": "9.12.0",
+    "mocha": "3.3.0",
+    "sinon": "2.1.0",
+    "sinon-chai": "2.10.0"
   },
   "dependencies": {
     "humps": "2.0.0",
