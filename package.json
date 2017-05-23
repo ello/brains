@@ -17,11 +17,7 @@
     ]
   },
   "eslintConfig": {
-    "extends": "ello",
-    "globals": {
-      "AndroidInterface": false,
-      "ENV": false
-    }
+    "extends": "ello"
   },
   "scripts": {
     "build": "babel src --out-dir ./",
