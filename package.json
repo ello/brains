@@ -16,6 +16,10 @@
       "transform-flow-strip-types"
     ]
   },
+  "engines": {
+    "node": "7.5.0",
+    "npm": "4.1.2"
+  },
   "eslintConfig": {
     "extends": "ello"
   },
