@@ -1,0 +1,11 @@
+language: node_js
+cache: yarn
+script:
+- yarn test
+- rvm install 2.3.1
+- rvm use 2.3.1
+- gem install danger -v 2.0.1 --no-ri --no-rdoc
+- danger
+notifications:
+  email: false
+  slack: ${SLACK_TOKEN}
