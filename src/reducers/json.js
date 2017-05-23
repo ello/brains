@@ -10,9 +10,9 @@ import * as ACTION_TYPES from '../constants/action_types'
 import * as MAPPING_TYPES from '../constants/mapping_types'
 import { RELATIONSHIP_PRIORITY } from '../constants/relationship_types'
 import { findModel } from '../helpers/json_helper'
-import commentMethods from './experience_updates/comments'
-import postMethods from './experience_updates/posts'
-import relationshipMethods from './experience_updates/relationships'
+import commentMethods from './comments'
+import postMethods from './posts'
+import relationshipMethods from './relationships'
 
 // adding methods and accessing them from this object
 // allows the unit tests to stub methods in this module
