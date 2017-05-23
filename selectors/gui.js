@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectIsLayoutToolHidden = exports.selectScrollOffset = exports.selectHasSaidHelloTo = exports.selectDPI = exports.selectContentWidth = exports.selectColumnWidth = exports.selectCommentOffset = exports.selectPaddingOffset = exports.selectIsMobileGridStream = exports.selectIsMobile = exports.selectDeviceSize = exports.selectActiveNotificationScrollPosition = exports.selectTextToolsStates = exports.selectTextToolsCoordinates = exports.selectSaidHelloTo = exports.selectNotificationScrollPositions = exports.selectLastNotificationCheck = exports.selectLastFollowingBeaconVersion = exports.selectLastDiscoverBeaconVersion = exports.selectLastAnnouncementSeen = exports.selectIsTextToolsActive = exports.selectIsProfileMenuActive = exports.selectIsNotificationsUnread = exports.selectIsNotificationsActive = exports.selectIsNavbarHidden = exports.selectIsGridMode = exports.selectIsCompleterActive = exports.selectInnerWidth = exports.selectInnerHeight = exports.selectHomeStream = exports.selectHasLaunchedSignupModal = exports.selectDiscoverKeyType = exports.selectColumnCount = exports.selectActiveNotificationsType = undefined;
+exports.selectIsLayoutToolHidden = exports.selectScrollOffset = exports.selectHasSaidHelloTo = exports.selectDPI = exports.selectContentWidth = exports.selectColumnWidth = exports.selectCommentOffset = exports.selectPaddingOffset = exports.selectIsMobileGridStream = exports.selectIsMobile = exports.selectDeviceSize = exports.selectActiveNotificationScrollPosition = exports.selectTextToolsStates = exports.selectTextToolsCoordinates = exports.selectSaidHelloTo = exports.selectNotificationScrollPositions = exports.selectLastNotificationCheck = exports.selectLastFollowingBeaconVersion = exports.selectLastDiscoverBeaconVersion = exports.selectLastAnnouncementSeen = exports.selectIsTextToolsActive = exports.selectIsProfileMenuActive = exports.selectIsNotificationsUnread = exports.selectIsNotificationsActive = exports.selectIsNavbarHidden = exports.selectIsGridMode = exports.selectIsCompleterActive = exports.selectInnerWidth = exports.selectInnerHeight = exports.selectHasLaunchedSignupModal = exports.selectDiscoverKeyType = exports.selectColumnCount = exports.selectActiveNotificationsType = undefined;
 
 var _reselect = require('reselect');
 
@@ -23,9 +23,6 @@ var selectDiscoverKeyType = exports.selectDiscoverKeyType = function selectDisco
 };
 var selectHasLaunchedSignupModal = exports.selectHasLaunchedSignupModal = function selectHasLaunchedSignupModal(state) {
   return state.gui.get('hasLaunchedSignupModal');
-};
-var selectHomeStream = exports.selectHomeStream = function selectHomeStream(state) {
-  return state.gui.get('homeStream');
 };
 var selectInnerHeight = exports.selectInnerHeight = function selectInnerHeight(state) {
   return state.gui.get('innerHeight');
