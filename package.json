@@ -40,14 +40,19 @@
     "chai": "3.5.0",
     "chai-immutable": "1.6.0",
     "chai-generator": "2.1.0",
-    "dotenv": "4.0.0",
     "eslint": "3.19.0",
     "eslint-config-ello": "1.0.3",
     "flow-bin": "0.45.0",
     "jsdom": "9.12.0",
     "mocha": "3.3.0",
+    "react": "15.5.4",
+    "react-addons-test-utils": "15.5.1",
+    "react-dom": "15.5.4",
     "sinon": "2.1.0",
     "sinon-chai": "2.10.0"
+  },
+  "peerDependencies": {
+    "react": "15.5.4"
   },
   "dependencies": {
     "humps": "2.0.0",
