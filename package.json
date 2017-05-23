@@ -23,26 +23,6 @@
       "ENV": false
     }
   },
-  "stylelint": {
-    "extends": "stylelint-config-primer",
-    "rules": {
-      "comment-empty-line-before": null,
-      "selector-class-pattern": null,
-      "selector-no-type": null,
-      "no-unsupported-browser-features": [
-        true,
-        {
-          "browsers": "> 5%, last 2 firefox versions, last 2 chrome versions, last 2 safari versions, last 2 edge versions, ie 11, not OperaMini all",
-          "ignore": [
-            "calc",
-            "flexbox",
-            "viewport-units",
-            "will-change"
-          ]
-        }
-      ]
-    }
-  },
   "scripts": {
     "build": "babel src --out-dir ./",
     "build:watch": "babel src --out-dir ./ --watch",
