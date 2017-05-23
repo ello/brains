@@ -1,4 +1,3 @@
-// @flow
 const dragObjects = []
 const dragThreshold = 5
 let dragX = 0
