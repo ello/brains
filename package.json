@@ -16,6 +16,10 @@
       "transform-flow-strip-types"
     ]
   },
+  "engines": {
+    "node": "7.5.0",
+    "npm": "4.1.2"
+  },
   "eslintConfig": {
     "extends": "ello"
   },
@@ -23,10 +27,14 @@
     "build": "babel src --out-dir ./",
     "build:watch": "babel src --out-dir ./ --watch",
     "flow": "flow",
+    "link-curator": "yarn link && cd ../curator && yarn add file:../brains -E --ignore-scripts && yarn link ello-brains && echo 'run `yarn build:watch` to build the brains on save'",
+    "link-webapp": "yarn link && cd ../webapp && yarn add file:../brains -E --ignore-scripts && yarn link ello-brains && echo 'run `yarn build:watch` to build the brains on save'",
     "lint": "eslint src test",
     "pretest": "yarn lint",
     "test": "NODE_ENV=test mocha test/unit --recursive",
-    "test:watch": "NODE_ENV=test mocha test/unit --recursive --watch"
+    "test:watch": "NODE_ENV=test mocha test/unit --recursive --watch",
+    "unlink-curator": "yarn unlink && cd ../curator && yarn remove ello-brains && yarn add https://github.com/ello/brains -E --ignore-scripts",
+    "unlink-webapp": "yarn unlink && cd ../webapp && yarn remove ello-brains && yarn add https://github.com/ello/brains -E --ignore-scripts"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",

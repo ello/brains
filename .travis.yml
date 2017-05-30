@@ -1,0 +1,12 @@
+language: node_js
+cache: yarn
+script:
+- yarn test
+- rvm install 2.3.1
+- rvm use 2.3.1
+- gem install danger --no-ri --no-rdoc
+- danger
+notifications:
+  email: false
+  slack:
+    secure: xKonGP6IySOR4Xp955Bx+63UHFT0jUukZCfGc5sToyqkqCqm+iQSRwywtrGk8jCG35gtiRQahpT3QKrTpPOlfPMoZ0Q/Cb02VWOGA5LiYh3wB4C6SLLhhpKxc8Un7tFKejClNIZfIYvnJNZcwj2R9Zc8B2WmGeTbT3qrVu0E0cyJ1kbLFSsq2m5IkGZkD4fuk9k01lAtyTN254AaFWfOFRPGEc63K96xiHhrERQqHyyqSftwxQaUq8RaNKCePbH/x1e2qDYm8wbFy5n+LPh7mymM/+V6qyBIORONHmLlRst6EBUVrLyIoW/GUTilolTS82Dnm5af72pG4fNb+Mrmx6uQjjqMn3XAQmFDvefG7bKvZvECfLs58HQF1qY4X0zWehrqadG/QYb10j0lAktpS2FxzozB48rOCWGOcyaiMZlYrdNF2PBHn9j36vH5Dn3zPR9+ym/vThGYxMqCk6lILcCb+LEQev1LgFQHgBCSxnFCB5bB0xHk3QtuOEmMiauAT9j3UmPYgxLB9dySMl2f028scDeF6nZoy3ASObThVYgZ2zEN6bNBgOpyUPqnzLacRxMoJqnXeb2nMyoIj4Gdpca6+H/IgjJlWMcK6QmxT80UxXixbUpcwe99U0Lhm6jIBnflpmc/ZkJj9Fvb/0UDQfTf6c8ac23YUD5ZVYMgsDY=
