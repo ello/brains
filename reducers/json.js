@@ -46,15 +46,15 @@ var _relationship_types = require('../constants/relationship_types');
 
 var _json_helper = require('../helpers/json_helper');
 
-var _comments = require('./experience_updates/comments');
+var _comments = require('./comments');
 
 var _comments2 = _interopRequireDefault(_comments);
 
-var _posts = require('./experience_updates/posts');
+var _posts = require('./posts');
 
 var _posts2 = _interopRequireDefault(_posts);
 
-var _relationships = require('./experience_updates/relationships');
+var _relationships = require('./relationships');
 
 var _relationships2 = _interopRequireDefault(_relationships);
 

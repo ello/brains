@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import Immutable from 'immutable'
-import * as ACTION_TYPES from '../../constants/action_types'
-import * as MAPPING_TYPES from '../../constants/mapping_types'
-import * as jsonReducer from '../../reducers/json'
+import * as ACTION_TYPES from '../constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
+import * as jsonReducer from '../reducers/json'
 import postMethods from './posts'
 
 const methods = {}
