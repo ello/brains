@@ -22,15 +22,14 @@ export const selectCategoryData = createSelector(
 
 export const selectIsPagePromotion = createSelector(
   [selectViewNameFromRoute, selectPathname], (viewName, pathname) =>
-    (viewName === 'search') ||
     (viewName === 'discover' && pathname === '/discover') ||
-    (viewName === 'discover' && pathname === '/discover/all') ||
     (viewName === 'discover' && /\/featured\b|\/trending\b|\/recent\b/.test(pathname)),
 )
 
 export const selectIsCategoryPromotion = createSelector(
-  [selectViewNameFromRoute, selectIsPagePromotion], (viewName, isPagePromotion) =>
-    (viewName === 'discover' && !isPagePromotion),
+  [selectViewNameFromRoute, selectIsPagePromotion, selectPathname],
+  (viewName, isPagePromotion, pathname) =>
+    (viewName === 'discover' && (!isPagePromotion && pathname !== '/discover/all')),
 )
 
 export const selectLoggedInPagePromotions = createSelector(
@@ -53,3 +52,4 @@ export const selectRandomAuthPromotion = createSelector(
     return authPromos.get(randomKey)
   },
 )
+
