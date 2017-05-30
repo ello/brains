@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ZERO_RENDERABLES = exports.STREAM_RENDERABLES = exports.PROMO_HOST = exports.PER_PAGE = exports.getAPIPath = exports.ERROR_RENDERABLES = exports.AUTH_CLIENT_ID = exports.API_VERSION = exports.API_DOMAIN = exports.setZeroRenderables = exports.setStreamRenderables = exports.setPromoHost = exports.setErrorRenderables = exports.setAuthClientId = exports.setApiDomain = undefined;
+exports.ZERO_RENDERABLES = exports.USE_LOCAL_EMOJI = exports.STREAM_RENDERABLES = exports.PROMO_HOST = exports.PER_PAGE = exports.getAPIPath = exports.ERROR_RENDERABLES = exports.AUTH_DOMAIN = exports.AUTH_CLIENT_ID = exports.API_VERSION = exports.API_DOMAIN = exports.setZeroRenderables = exports.setUseLocalEmoji = exports.setStreamRenderables = exports.setPromoHost = exports.setErrorRenderables = exports.setAuthDomain = exports.setAuthClientId = exports.setApiDomain = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -81,10 +81,12 @@ var _uri_helper = require('../helpers/uri_helper');
 var API_VERSION = 'v2';
 var PER_PAGE = 25;
 var API_DOMAIN = void 0;
+var AUTH_DOMAIN = void 0;
 var AUTH_CLIENT_ID = void 0;
 var ERROR_RENDERABLES = void 0;
 var PROMO_HOST = void 0;
 var STREAM_RENDERABLES = void 0;
+var USE_LOCAL_EMOJI = void 0;
 var ZERO_RENDERABLES = void 0;
 
 var setApiDomain = exports.setApiDomain = function setApiDomain(domain) {
@@ -92,6 +94,9 @@ var setApiDomain = exports.setApiDomain = function setApiDomain(domain) {
 };
 var setAuthClientId = exports.setAuthClientId = function setAuthClientId(id) {
   return exports.AUTH_CLIENT_ID = AUTH_CLIENT_ID = id;
+};
+var setAuthDomain = exports.setAuthDomain = function setAuthDomain(domain) {
+  return exports.AUTH_DOMAIN = AUTH_DOMAIN = domain;
 };
 var setErrorRenderables = exports.setErrorRenderables = function setErrorRenderables(renderables) {
   return exports.ERROR_RENDERABLES = ERROR_RENDERABLES = renderables;
@@ -101,6 +106,9 @@ var setPromoHost = exports.setPromoHost = function setPromoHost(host) {
 };
 var setStreamRenderables = exports.setStreamRenderables = function setStreamRenderables(renderables) {
   return exports.STREAM_RENDERABLES = STREAM_RENDERABLES = renderables;
+};
+var setUseLocalEmoji = exports.setUseLocalEmoji = function setUseLocalEmoji(useLocalEmoji) {
+  return exports.USE_LOCAL_EMOJI = USE_LOCAL_EMOJI = useLocalEmoji;
 };
 var setZeroRenderables = exports.setZeroRenderables = function setZeroRenderables(renderables) {
   return exports.ZERO_RENDERABLES = ZERO_RENDERABLES = renderables;
@@ -386,13 +394,13 @@ function userAutocompleter(word) {
   };
 }
 function loadEmojis() {
-  if (ENV.USE_LOCAL_EMOJI) {
+  if (USE_LOCAL_EMOJI) {
     return {
       path: '/static/emojis.json'
     };
   }
   return {
-    path: ENV.AUTH_DOMAIN + '/emojis.json'
+    path: AUTH_DOMAIN + '/emojis.json'
   };
 }
 // Dummy editor endpoint to use for default action on text tools form
@@ -548,9 +556,11 @@ function splitFinish(uuid, name) {
 exports.API_DOMAIN = API_DOMAIN;
 exports.API_VERSION = API_VERSION;
 exports.AUTH_CLIENT_ID = AUTH_CLIENT_ID;
+exports.AUTH_DOMAIN = AUTH_DOMAIN;
 exports.ERROR_RENDERABLES = ERROR_RENDERABLES;
 exports.getAPIPath = getAPIPath;
 exports.PER_PAGE = PER_PAGE;
 exports.PROMO_HOST = PROMO_HOST;
 exports.STREAM_RENDERABLES = STREAM_RENDERABLES;
+exports.USE_LOCAL_EMOJI = USE_LOCAL_EMOJI;
 exports.ZERO_RENDERABLES = ZERO_RENDERABLES;

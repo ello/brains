@@ -127,6 +127,8 @@ function deleteProfile() {
 }
 
 function availableToggles() {
+  var ErrorState = api.ERROR_RENDERABLES.ErrorState;
+
   return {
     type: _action_types.LOAD_STREAM,
     meta: {

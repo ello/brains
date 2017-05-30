@@ -17,15 +17,9 @@ var _mapping_types = require('../constants/mapping_types');
 
 var _api = require('../networking/api');
 
-var _Errors = require('../components/errors/Errors');
-
-var _Zeros = require('../components/zeros/Zeros');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-// import { editorials as editorialRenderable, postsAsCuratedEditorial } from '../components/streams/StreamRenderables'
-
 
 var loadEditorials = exports.loadEditorials = function loadEditorials(isPreview) {
   return {
@@ -46,6 +40,9 @@ var loadCuratedPosts = function loadCuratedPosts(_ref) {
       resultKey = _ref.resultKey,
       props = _objectWithoutProperties(_ref, ['endpointPath', 'resultKey']);
 
+  var ErrorStateEditorial = _api.ERROR_RENDERABLES.ErrorStateEditorial;
+  var ZeroStateEditorial = _api.ZERO_RENDERABLES.ZeroStateEditorial;
+
   return {
     type: _action_types.LOAD_STREAM,
     payload: { endpoint: { path: endpointPath } },
@@ -55,8 +52,8 @@ var loadCuratedPosts = function loadCuratedPosts(_ref) {
       renderStream: {
         asList: _api.STREAM_RENDERABLES.postsAsCuratedEditorial,
         asGrid: _api.STREAM_RENDERABLES.postsAsCuratedEditorial,
-        asZero: _react2.default.createElement(_api.ZERO_RENDERABLES.ZeroStateEditorial, null),
-        asError: _react2.default.createElement(_Errors.ErrorStateEditorial, null)
+        asZero: _react2.default.createElement(ZeroStateEditorial, null),
+        asError: _react2.default.createElement(ErrorStateEditorial, null)
       },
       resultKey: resultKey
     }
