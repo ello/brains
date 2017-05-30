@@ -57,8 +57,10 @@
     "react": "15.5.4"
   },
   "dependencies": {
+    "exif-js": "2.2.1",
     "humps": "2.0.0",
     "immutable": "3.8.1",
+    "jwt-decode": "2.2.0",
     "lodash": "4.17.4",
     "react-router-redux": "4.0.8",
     "redux-persist": "4.7.1",

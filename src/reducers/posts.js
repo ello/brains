@@ -2,7 +2,7 @@
 import Immutable from 'immutable'
 import * as ACTION_TYPES from '../constants/action_types'
 import * as MAPPING_TYPES from '../constants/mapping_types'
-import * as jsonReducer from '../reducers/json'
+import * as jsonReducer from './json'
 
 const methods = {}
 
