@@ -45,11 +45,11 @@ var selectCategoryData = exports.selectCategoryData = (0, _reselect.createSelect
 });
 
 var selectIsPagePromotion = exports.selectIsPagePromotion = (0, _reselect.createSelector)([_routing.selectViewNameFromRoute, _routing.selectPathname], function (viewName, pathname) {
-  return viewName === 'search' || viewName === 'discover' && pathname === '/discover' || viewName === 'discover' && pathname === '/discover/all' || viewName === 'discover' && /\/featured\b|\/trending\b|\/recent\b/.test(pathname);
+  return viewName === 'discover' && pathname === '/discover' || viewName === 'discover' && /\/featured\b|\/trending\b|\/recent\b/.test(pathname);
 });
 
-var selectIsCategoryPromotion = exports.selectIsCategoryPromotion = (0, _reselect.createSelector)([_routing.selectViewNameFromRoute, selectIsPagePromotion], function (viewName, isPagePromotion) {
-  return viewName === 'discover' && !isPagePromotion;
+var selectIsCategoryPromotion = exports.selectIsCategoryPromotion = (0, _reselect.createSelector)([_routing.selectViewNameFromRoute, selectIsPagePromotion, _routing.selectPathname], function (viewName, isPagePromotion, pathname) {
+  return viewName === 'discover' && !isPagePromotion && pathname !== '/discover/all';
 });
 
 var selectLoggedInPagePromotions = exports.selectLoggedInPagePromotions = (0, _reselect.createSelector)([selectPagePromotionals], function (promos) {
