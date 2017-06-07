@@ -59,9 +59,12 @@
   "dependencies": {
     "humps": "2.0.0",
     "immutable": "3.8.1",
+    "isomorphic-fetch": "2.2.1",
+    "jwt-decode": "2.2.0",
     "lodash": "4.17.4",
     "react-router-redux": "4.0.8",
     "redux-persist": "4.7.1",
+    "redux-saga": "0.15.3",
     "reselect": "3.0.0",
     "trunc-html": "1.1.2"
   }

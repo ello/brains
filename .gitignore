@@ -1,10 +1,11 @@
 /actions/
-/constants/
 /components/
+/constants/
 /helpers/
 /interactions/
 /lib/
 /networking/
 /reducers/
+/sagas/
 /selectors/
 /types/
