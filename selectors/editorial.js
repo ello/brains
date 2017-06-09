@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectEditorialAnalyticsOptions = exports.selectEditorialUrl = exports.selectEditorialPostStreamHref = exports.selectEditorialPostId = exports.selectEditorialKind = exports.selectEditorialImageSource = exports.selectEditorial = exports.selectEditorials = exports.selectPropsEditorialId = undefined;
+exports.selectEditorialAnalyticsOptions = exports.selectEditorialUrl = exports.selectEditorialPostStreamHref = exports.selectEditorialPostId = exports.selectEditorialPath = exports.selectEditorialKind = exports.selectEditorialImageSource = exports.selectEditorial = exports.selectEditorials = exports.selectPropsEditorialId = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -61,6 +61,10 @@ var selectEditorialImageSource = exports.selectEditorialImageSource = (0, _resel
 
 var selectEditorialKind = exports.selectEditorialKind = (0, _reselect.createSelector)([selectEditorial], function (editorial) {
   return editorial.get('kind');
+});
+
+var selectEditorialPath = exports.selectEditorialPath = (0, _reselect.createSelector)([selectEditorial], function (editorial) {
+  return editorial.get('path');
 });
 
 var selectEditorialPostId = exports.selectEditorialPostId = (0, _reselect.createSelector)([selectEditorial], function (editorial) {

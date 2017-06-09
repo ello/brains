@@ -42,6 +42,11 @@ export const selectEditorialKind = createSelector(
     editorial.get('kind'),
 )
 
+export const selectEditorialPath = createSelector(
+  [selectEditorial], editorial =>
+    editorial.get('path'),
+)
+
 export const selectEditorialPostId = createSelector(
   [selectEditorial], editorial =>
     editorial.getIn(['links', 'post', 'id']),
