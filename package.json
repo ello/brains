@@ -19,6 +19,19 @@
   "eslintConfig": {
     "extends": "ello"
   },
+  "files": [
+    "/actions/",
+    "/components/",
+    "/constants/",
+    "/helpers/",
+    "/interactions/",
+    "/lib/",
+    "/networking/",
+    "/reducers/",
+    "/sagas/",
+    "/selectors/",
+    "/types/"
+  ],
   "scripts": {
     "build": "babel src --out-dir ./",
     "build:watch": "babel src --out-dir ./ --watch",
