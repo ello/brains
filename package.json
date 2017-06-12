@@ -23,14 +23,12 @@
     "build": "babel src --out-dir ./",
     "build:watch": "babel src --out-dir ./ --watch",
     "flow": "flow",
-    "link-curator": "yarn link && cd ../curator && yarn add file:../brains -E --ignore-scripts && yarn link ello-brains && echo 'run `yarn build:watch` to build the brains on save'",
-    "link-webapp": "yarn link && cd ../webapp && yarn add file:../brains -E --ignore-scripts && yarn link ello-brains && echo 'run `yarn build:watch` to build the brains on save'",
+    "link-apps": "yarn link && cd ../webapp && yarn link ello-brains && cd ../curator && yarn link ello-brains && echo 'run `yarn build:watch` to build the brains on save'",
     "lint": "eslint src test",
     "pretest": "yarn lint",
     "test": "NODE_ENV=test mocha test/unit --recursive",
     "test:watch": "NODE_ENV=test mocha test/unit --recursive --watch",
-    "unlink-curator": "yarn unlink && cd ../curator && yarn remove ello-brains && yarn add https://github.com/ello/brains -E --ignore-scripts",
-    "unlink-webapp": "yarn unlink && cd ../webapp && yarn remove ello-brains && yarn add https://github.com/ello/brains -E --ignore-scripts"
+    "unlink-apps": "cd ../webapp && yarn unlink ello-brains && yarn --ignore-scripts && cd ../curator && yarn unlink ello-brains && yarn --ignore-scripts && cd ../brains && yarn unlink"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
@@ -42,8 +40,8 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "chai": "3.5.0",
-    "chai-immutable": "1.6.0",
     "chai-generator": "2.1.0",
+    "chai-immutable": "1.6.0",
     "eslint": "3.19.0",
     "eslint-config-ello": "1.0.3",
     "flow-bin": "0.45.0",
@@ -61,9 +59,12 @@
   "dependencies": {
     "humps": "2.0.0",
     "immutable": "3.8.1",
+    "isomorphic-fetch": "2.2.1",
+    "jwt-decode": "2.2.0",
     "lodash": "4.17.4",
     "react-router-redux": "4.0.8",
     "redux-persist": "4.7.1",
+    "redux-saga": "0.15.3",
     "reselect": "3.0.0",
     "trunc-html": "1.1.2"
   }
