@@ -1,4 +1,4 @@
-import { AUTHENTICATION } from 'ello-brains/constants/action_types'
+import { AUTHENTICATION } from '../constants/action_types'
 import {
   loginToken,
   logout as logoutEndpoint,

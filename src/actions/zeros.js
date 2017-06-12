@@ -1,4 +1,4 @@
-import { ZEROS } from 'ello-brains/constants/action_types'
+import { ZEROS } from '../constants/action_types'
 
 export function sayHello({ username }) {
   return {

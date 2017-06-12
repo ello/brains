@@ -1,5 +1,5 @@
-import * as ACTION_TYPES from 'ello-brains/constants/action_types'
-import * as MAPPING_TYPES from 'ello-brains/constants/mapping_types'
+import * as ACTION_TYPES from '../constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
 import * as api from '../networking/api'
 
 // TODO: Update the `body` and `user_ids`

@@ -1,11 +1,10 @@
 import React from 'react'
-import * as ACTION_TYPES from 'ello-brains/constants/action_types'
-import * as MAPPING_TYPES from 'ello-brains/constants/mapping_types'
+import * as ACTION_TYPES from '../constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
 import * as api from '../networking/api'
-import * as StreamRenderables from '../components/streams/StreamRenderables'
-import { ZeroState } from '../components/zeros/Zeros'
 
 export function searchForPosts(terms) {
+  const { ZeroState } = api.ZERO_RENDERABLES
   return {
     type: ACTION_TYPES.LOAD_STREAM,
     payload: {
@@ -17,8 +16,8 @@ export function searchForPosts(terms) {
     meta: {
       mappingType: MAPPING_TYPES.POSTS,
       renderStream: {
-        asGrid: StreamRenderables.postsAsGrid,
-        asList: StreamRenderables.postsAsList,
+        asGrid: api.STREAM_RENDERABLES.postsAsGrid,
+        asList: api.STREAM_RENDERABLES.postsAsList,
         asZero: <ZeroState />,
       },
       resultKey: '/search/posts',
@@ -27,6 +26,7 @@ export function searchForPosts(terms) {
 }
 
 export function searchForUsers(terms) {
+  const { ZeroState } = api.ZERO_RENDERABLES
   return {
     type: ACTION_TYPES.LOAD_STREAM,
     payload: {
@@ -38,8 +38,8 @@ export function searchForUsers(terms) {
     meta: {
       mappingType: MAPPING_TYPES.USERS,
       renderStream: {
-        asGrid: StreamRenderables.usersAsGrid,
-        asList: StreamRenderables.usersAsGrid,
+        asGrid: api.STREAM_RENDERABLES.usersAsGrid,
+        asList: api.STREAM_RENDERABLES.usersAsGrid,
         asZero: <ZeroState />,
       },
       resultKey: '/search/users',

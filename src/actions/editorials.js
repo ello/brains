@@ -1,10 +1,12 @@
 import React from 'react'
-import { LOAD_STREAM } from 'ello-brains/constants/action_types'
-import { EDITORIALS, POSTS } from 'ello-brains/constants/mapping_types'
-import { editorials as editorialsApi } from '../networking/api'
-import { editorials as editorialRenderable, postsAsPostStream } from '../components/streams/StreamRenderables'
-import { ErrorStateEditorial } from '../components/errors/Errors'
-import { ZeroStateEditorial } from '../components/zeros/Zeros'
+import { LOAD_STREAM } from '../constants/action_types'
+import { EDITORIALS, POSTS } from '../constants/mapping_types'
+import {
+  editorials as editorialsApi,
+  ERROR_RENDERABLES,
+  STREAM_RENDERABLES,
+  ZERO_RENDERABLES,
+} from '../networking/api'
 
 export const loadEditorials = isPreview => (
   {
@@ -13,28 +15,30 @@ export const loadEditorials = isPreview => (
     meta: {
       mappingType: EDITORIALS,
       renderStream: {
-        asList: editorialRenderable,
-        asGrid: editorialRenderable,
+        asList: STREAM_RENDERABLES.editorials,
+        asGrid: STREAM_RENDERABLES.editorials,
       },
     },
   }
 )
 
-export const loadPostStream = ({ endpointPath, resultKey, ...props }) => (
-  {
+export const loadPostStream = ({ endpointPath, resultKey, ...props }) => {
+  const { ErrorStateEditorial } = ERROR_RENDERABLES
+  const { ZeroStateEditorial } = ZERO_RENDERABLES
+  return {
     type: LOAD_STREAM,
     payload: { endpoint: { path: endpointPath } },
     meta: {
       mappingType: POSTS,
       renderProps: { ...props },
       renderStream: {
-        asList: postsAsPostStream,
-        asGrid: postsAsPostStream,
+        asList: STREAM_RENDERABLES.postsAsPostStream,
+        asGrid: STREAM_RENDERABLES.postsAsPostStream,
         asZero: <ZeroStateEditorial />,
         asError: <ErrorStateEditorial />,
       },
       resultKey,
     },
   }
-)
+}
 

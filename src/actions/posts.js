@@ -1,7 +1,6 @@
-import { LOAD_STREAM, POST } from 'ello-brains/constants/action_types'
-import * as MAPPING_TYPES from 'ello-brains/constants/mapping_types'
+import { LOAD_STREAM, POST } from '../constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
 import * as api from '../networking/api'
-import * as StreamRenderables from '../components/streams/StreamRenderables'
 import { resetEditor } from '../actions/editor'
 
 export function createPost(body, editorId, repostId, repostedFromId) {
@@ -58,8 +57,8 @@ export function loadComments(postId, addUpdateKey = true) {
       mappingType: MAPPING_TYPES.COMMENTS,
       mergeResults: true,
       renderStream: {
-        asList: StreamRenderables.commentsAsList,
-        asGrid: StreamRenderables.commentsAsList,
+        asList: api.STREAM_RENDERABLES.commentsAsList,
+        asGrid: api.STREAM_RENDERABLES.commentsAsList,
       },
       resultKey: `/posts/${postId}/comments`,
       updateKey: `/posts/${postId}`,
@@ -106,8 +105,8 @@ export function loadRelatedPosts(postId, perPage) {
     meta: {
       mappingType: MAPPING_TYPES.POSTS,
       renderStream: {
-        asList: StreamRenderables.postsAsRelated,
-        asGrid: StreamRenderables.postsAsRelated,
+        asList: api.STREAM_RENDERABLES.postsAsRelated,
+        asGrid: api.STREAM_RENDERABLES.postsAsRelated,
       },
       resultKey: `/posts/${postId}/related_posts`,
     },

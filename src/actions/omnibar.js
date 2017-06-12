@@ -1,4 +1,4 @@
-import { OMNIBAR } from 'ello-brains/constants/action_types'
+import { OMNIBAR } from '../constants/action_types'
 
 export function openOmnibar(classList = '') {
   return {

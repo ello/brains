@@ -1,4 +1,4 @@
-import { GUI } from 'ello-brains/constants/action_types'
+import { GUI } from '../constants/action_types'
 
 export function setIsNavbarHidden({ isHidden }) {
   return {

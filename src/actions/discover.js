@@ -1,8 +1,7 @@
-import * as ACTION_TYPES from 'ello-brains/constants/action_types'
-import * as MAPPING_TYPES from 'ello-brains/constants/mapping_types'
+import * as ACTION_TYPES from '../constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
 import * as api from '../networking/api'
 import * as StreamFilters from '../components/streams/StreamFilters'
-import * as StreamRenderables from '../components/streams/StreamRenderables'
 
 export function getCategories() {
   return {
@@ -11,8 +10,8 @@ export function getCategories() {
     meta: {
       mappingType: MAPPING_TYPES.CATEGORIES,
       renderStream: {
-        asList: StreamRenderables.categoriesAsGrid,
-        asGrid: StreamRenderables.categoriesAsGrid,
+        asList: api.STREAM_RENDERABLES.categoriesAsGrid,
+        asGrid: api.STREAM_RENDERABLES.categoriesAsGrid,
       },
       resultFilter: StreamFilters.sortedCategories,
       resultKey: 'all-categories',
@@ -38,8 +37,8 @@ export function loadCategoryPosts(type) {
     meta: {
       mappingType: MAPPING_TYPES.POSTS,
       renderStream: {
-        asList: StreamRenderables.postsAsList,
-        asGrid: StreamRenderables.postsAsGrid,
+        asList: api.STREAM_RENDERABLES.postsAsList,
+        asGrid: api.STREAM_RENDERABLES.postsAsGrid,
       },
     },
   }
@@ -52,8 +51,8 @@ export function loadDiscoverPosts(type) {
     meta: {
       mappingType: MAPPING_TYPES.POSTS,
       renderStream: {
-        asList: StreamRenderables.postsAsList,
-        asGrid: StreamRenderables.postsAsGrid,
+        asList: api.STREAM_RENDERABLES.postsAsList,
+        asGrid: api.STREAM_RENDERABLES.postsAsGrid,
       },
     },
   }
@@ -66,8 +65,8 @@ export function loadCommunities() {
     meta: {
       mappingType: MAPPING_TYPES.USERS,
       renderStream: {
-        asList: StreamRenderables.usersAsGrid,
-        asGrid: StreamRenderables.usersAsGrid,
+        asList: api.STREAM_RENDERABLES.usersAsGrid,
+        asGrid: api.STREAM_RENDERABLES.usersAsGrid,
       },
     },
   }
@@ -80,8 +79,8 @@ export function loadFeaturedUsers() {
     meta: {
       mappingType: MAPPING_TYPES.USERS,
       renderStream: {
-        asList: StreamRenderables.usersAsGrid,
-        asGrid: StreamRenderables.usersAsGrid,
+        asList: api.STREAM_RENDERABLES.usersAsGrid,
+        asGrid: api.STREAM_RENDERABLES.usersAsGrid,
       },
     },
   }

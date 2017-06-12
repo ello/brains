@@ -1,4 +1,4 @@
-import { PROMOTIONS } from 'ello-brains/constants/action_types'
+import { PROMOTIONS } from '../constants/action_types'
 import { authenticationPromo } from '../networking/api'
 
 export const fetchAuthenticationPromos = () => ({

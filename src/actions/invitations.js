@@ -1,19 +1,18 @@
 import React from 'react'
-import * as ACTION_TYPES from 'ello-brains/constants/action_types'
-import * as MAPPING_TYPES from 'ello-brains/constants/mapping_types'
+import * as ACTION_TYPES from '../constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
 import * as api from '../networking/api'
-import * as StreamRenderables from '../components/streams/StreamRenderables'
-import { ErrorState } from '../components/errors/Errors'
 
 export function loadInvitedUsers() {
+  const { ErrorState } = api.ERROR_RENDERABLES
   return {
     type: ACTION_TYPES.LOAD_STREAM,
     payload: { endpoint: api.invite(), vo: {} },
     meta: {
       mappingType: MAPPING_TYPES.INVITATIONS,
       renderStream: {
-        asList: StreamRenderables.usersAsInviteeList,
-        asGrid: StreamRenderables.usersAsInviteeGrid,
+        asList: api.STREAM_RENDERABLES.usersAsInviteeList,
+        asGrid: api.STREAM_RENDERABLES.usersAsInviteeGrid,
         asError: <ErrorState />,
       },
     },

@@ -1,11 +1,9 @@
 import React from 'react'
 import { replace } from 'react-router-redux'
-import * as MAPPING_TYPES from 'ello-brains/constants/mapping_types'
-import { LOAD_STREAM, PROFILE } from 'ello-brains/constants/action_types'
+import * as MAPPING_TYPES from '../constants/mapping_types'
+import { LOAD_STREAM, PROFILE } from '../constants/action_types'
 import * as api from '../networking/api'
 import * as StreamFilters from '../components/streams/StreamFilters'
-import * as StreamRenderables from '../components/streams/StreamRenderables'
-import { ErrorState } from '../components/errors/Errors'
 
 export function autoCompleteLocation(location) {
   return {
@@ -85,13 +83,14 @@ export function deleteProfile() {
 }
 
 export function availableToggles() {
+  const { ErrorState } = api.ERROR_RENDERABLES
   return {
     type: LOAD_STREAM,
     meta: {
       mappingType: MAPPING_TYPES.SETTINGS,
       renderStream: {
-        asList: StreamRenderables.profileToggles,
-        asGrid: StreamRenderables.profileToggles,
+        asList: api.STREAM_RENDERABLES.profileToggles,
+        asGrid: api.STREAM_RENDERABLES.profileToggles,
         asError: <ErrorState />,
       },
       resultFilter: StreamFilters.settingsToggles,
@@ -179,8 +178,8 @@ export function blockedUsers() {
       defaultMode: 'list',
       mappingType: MAPPING_TYPES.USERS,
       renderStream: {
-        asList: StreamRenderables.usersAsCompact,
-        asGrid: StreamRenderables.usersAsCompact,
+        asList: api.STREAM_RENDERABLES.usersAsCompact,
+        asGrid: api.STREAM_RENDERABLES.usersAsCompact,
       },
       resultFilter: StreamFilters.userResults,
       resultKey: '/settings/blocked',
@@ -199,8 +198,8 @@ export function mutedUsers() {
       defaultMode: 'list',
       mappingType: MAPPING_TYPES.USERS,
       renderStream: {
-        asList: StreamRenderables.usersAsCompact,
-        asGrid: StreamRenderables.usersAsCompact,
+        asList: api.STREAM_RENDERABLES.usersAsCompact,
+        asGrid: api.STREAM_RENDERABLES.usersAsCompact,
       },
       resultFilter: StreamFilters.userResults,
       resultKey: '/settings/muted',

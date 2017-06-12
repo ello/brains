@@ -1,4 +1,4 @@
-import { EDITOR } from 'ello-brains/constants/action_types'
+import { EDITOR } from '../constants/action_types'
 import * as api from '../networking/api'
 
 export function addBlock(block, editorId, shouldCheckForEmpty = true) {

@@ -1,4 +1,4 @@
-import { TRACK } from 'ello-brains/constants/action_types'
+import { TRACK } from '../constants/action_types'
 
 export function trackEvent(label, options = {}) {
   return {

@@ -1,4 +1,4 @@
-import { MODAL, ALERT } from 'ello-brains/constants/action_types'
+import { MODAL, ALERT } from '../constants/action_types'
 
 export function openModal(component, classList = '', type = null, trackLabel = null, trackOptions = null) {
   return {
