@@ -4,6 +4,7 @@ import {
   logout as logoutEndpoint,
   forgotPassword,
   refreshAuthToken,
+  AUTH_CLIENT_ID,
 } from '../networking/api'
 
 export function clearAuthToken() {
@@ -22,7 +23,7 @@ export function getUserCredentials(email, password, meta) {
         email,
         password,
         grant_type: 'password',
-        client_id: ENV.AUTH_CLIENT_ID,
+        client_id: AUTH_CLIENT_ID,
       },
     },
     meta,
@@ -48,7 +49,7 @@ export function refreshAuthenticationToken(refreshToken) {
       body: {
         refresh_token: refreshToken,
         grant_type: 'refresh_token',
-        client_id: ENV.AUTH_CLIENT_ID,
+        client_id: AUTH_CLIENT_ID,
       },
     },
   }

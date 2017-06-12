@@ -2,6 +2,7 @@ import { getPagingQueryParams } from '../helpers/uri_helper'
 
 const API_VERSION = 'v2'
 const PER_PAGE = 25
+/* eslint-disable import/no-mutable-exports */
 let API_DOMAIN
 let AUTH_DOMAIN
 let AUTH_CLIENT_ID
@@ -11,6 +12,7 @@ let PROMO_HOST
 let STREAM_RENDERABLES
 let USE_LOCAL_EMOJI
 let ZERO_RENDERABLES
+/* eslint-enable import/no-mutable-exports */
 
 export const setApiDomain = (domain: string) => (API_DOMAIN = domain)
 export const setAuthClientId = (id: string) => (AUTH_CLIENT_ID = id)
