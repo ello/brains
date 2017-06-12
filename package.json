@@ -1,6 +1,6 @@
 {
   "name": "ello-brains",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The brains of ello's react applications.",
   "main": "index.js",
   "repository": "https://github.com/ello/brains",
