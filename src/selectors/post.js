@@ -60,7 +60,7 @@ export const selectPostBody = createSelector([selectPost], post => post.get('bod
 export const selectPostCommentsCount = createSelector([selectPost], post => countProtector(post.get('commentsCount')))
 export const selectPostContent = createSelector(
   [selectPost, selectAssets], (post, assets) =>
-    post.get('content', Immutable.Map()).map(region => addAssetToRegion(region, assets)),
+    (post.get('content') || Immutable.Map()).map(region => addAssetToRegion(region, assets)),
 )
 export const selectPostContentWarning = createSelector([selectPost], post => post.get('contentWarning'))
 export const selectPostCreatedAt = createSelector([selectPost], post => post.get('createdAt'))
@@ -72,7 +72,7 @@ export const selectPostLoved = createSelector([selectPost], post => post.get('lo
 export const selectPostLovesCount = createSelector([selectPost], post => countProtector(post.get('lovesCount')))
 export const selectPostRepostContent = createSelector(
   [selectPost, selectAssets], (post, assets) =>
-    post.get('repostContent', Immutable.Map()).map(region => addAssetToRegion(region, assets)),
+    (post.get('repostContent') || Immutable.Map()).map(region => addAssetToRegion(region, assets)),
 )
 export const selectPostRepostId = createSelector([selectPost], post => post.get('repostId'))
 export const selectPostReposted = createSelector([selectPost], post => post.get('reposted'))
@@ -80,7 +80,7 @@ export const selectPostRepostsCount = createSelector([selectPost], post => count
 export const selectPostShowComments = createSelector([selectPost], post => post.get('showComments', false))
 export const selectPostSummary = createSelector(
   [selectPost, selectAssets], (post, assets) =>
-    post.get('summary', Immutable.Map()).map(region => addAssetToRegion(region, assets)),
+    (post.get('summary') || Immutable.Map()).map(region => addAssetToRegion(region, assets)),
 )
 export const selectPostToken = createSelector([selectPost], post => post.get('token'))
 export const selectPostViewsCount = createSelector([selectPost], post => countProtector(post.get('viewsCount')))
