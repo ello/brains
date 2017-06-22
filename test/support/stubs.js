@@ -98,6 +98,7 @@ function stubUser(properties, shouldAdd = true) {
     badForSeo: false,
     badges: [],
     coverImage: stubCoverImage(),
+    creatorTypes: [],
     experimentalFeatures: false,
     externalLinksList: [
       {

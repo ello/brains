@@ -10,6 +10,7 @@ import {
   selectBundleId,
   selectCoverImage,
   selectCreatedAt,
+  selectCreatorTypes,
   selectEmail,
   selectExternalLinksList,
   selectHasAvatarPresent,
@@ -115,6 +116,12 @@ describe('profile selectors', () => {
   context('#selectCreatedAt', () => {
     it('returns the profile.createdAt', () => {
       expect(selectCreatedAt(state)).to.deep.equal(state.profile.get('createdAt'))
+    })
+  })
+
+  context('#selectCreatorTypes', () => {
+    it('returns the profile.creatorTypes', () => {
+      expect(selectCreatorTypes(state)).to.deep.equal(state.profile.get('creatorTypes'))
     })
   })
 
