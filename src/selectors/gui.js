@@ -98,6 +98,7 @@ export const selectScrollOffset = createSelector(
 )
 
 const NO_LAYOUT_TOOLS = [
+  /^\/$/,
   /^\/[\w-]+\/post\/.+/,
   /^\/discover\/all\b/,
   /^\/notifications\b/,
