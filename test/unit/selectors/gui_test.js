@@ -243,7 +243,6 @@ describe('gui selectors', () => {
       expect(selector.selectIsLayoutToolHidden(state)).to.equal(false)
 
       const hasLayoutTools = [
-        '/',
         '/following',
         '/invitiations',
         '/mk',
@@ -255,6 +254,7 @@ describe('gui selectors', () => {
       })
 
       const noLayoutTools = [
+        '/',
         '/settings',
         '/onboarding',
         '/onboarding/settings',
