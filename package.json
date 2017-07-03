@@ -38,6 +38,7 @@
     "flow": "flow",
     "link-apps": "yarn link && cd ../webapp && yarn link ello-brains && cd ../curator && yarn link ello-brains && echo 'run `yarn build:watch` to build the brains on save'",
     "lint": "eslint src test",
+    "prepublish": "yarn build",
     "pretest": "yarn lint",
     "test": "NODE_ENV=test mocha test/unit --recursive",
     "test:watch": "NODE_ENV=test mocha test/unit --recursive --watch",
