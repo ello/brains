@@ -6,6 +6,7 @@ import {
   selectCategorySlug,
   selectCategoryTabs,
   selectCategoryTileImageUrl,
+  selectCreatorTypeCategories,
   selectOnboardingCategories,
   selectOnboardingCategoriesFiltered,
   selectPropsCategoryId,
@@ -123,6 +124,14 @@ describe('categories selectors', () => {
       const cats = selectCategories(state)
       expect(selectOnboardingCategoriesFiltered(state)).to.deep.equal(cats.primary)
       expect(selectOnboardingCategoriesFiltered(state)).not.to.contain(cats.secondary[0])
+    })
+  })
+
+  context('#selectCreatorTypeCategories', () => {
+    it('the allowInOnboarding categories as a concatenated array', () => {
+      const cats = selectCategories(state)
+      expect(selectCreatorTypeCategories(state)).to.deep.equal(cats.secondary)
+      expect(selectCreatorTypeCategories(state)).not.to.contain(cats.primary[0])
     })
   })
 

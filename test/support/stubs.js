@@ -271,8 +271,8 @@ export function stubCategories(properties) {
     { level: 'meta', slug: 'recent', order: 1 },
     { level: 'primary', slug: 'metal', order: 0, allowInOnboarding: true },
     { level: 'primary', slug: 'art', order: 1, allowInOnboarding: true },
-    { level: 'secondary', slug: 'collage', order: 0 },
-    { level: 'secondary', slug: 'interviews', order: 1 },
+    { level: 'secondary', slug: 'collage', order: 0, isCreatorType: true },
+    { level: 'secondary', slug: 'interviews', order: 1, isCreatorType: true },
     { level: 'tertiary', slug: 'music', order: 0 },
     { level: 'tertiary', slug: 'development', order: 1 },
   ]
