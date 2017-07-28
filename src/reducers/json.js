@@ -98,7 +98,26 @@ methods.addModels = (state, type, data) => {
   // add state['modelType']
   const camelType = camelize(type)
   let ids = Immutable.List()
-  if (camelType === MAPPING_TYPES.CATEGORIES || camelType === MAPPING_TYPES.PAGE_PROMOTIONALS) {
+  // need to clobber the invite submissions since we want to replace
+  // their actions and not merge them with what we had previously
+  if (type === MAPPING_TYPES.ARTIST_INVITE_SUBMISSIONS) {
+    if (data[camelType]) {
+      if (data[camelType].length) {
+        // add arrays of models to state['modelType']['id']
+        data[camelType].forEach((item) => {
+          const id = `${item.id}`
+          state = state.setIn([camelType, id], Immutable.fromJS(item))
+          ids = ids.push(id)
+        })
+      } else if (typeof data[camelType] === 'object') {
+        // add single model objects to state['modelType']['id']
+        const model = data[camelType]
+        const id = `${model.id}`
+        state = state.setIn([camelType, id], Immutable.fromJS(model))
+        ids = ids.push(id)
+      }
+    }
+  } else if (type === MAPPING_TYPES.CATEGORIES || type === MAPPING_TYPES.PAGE_PROMOTIONALS) {
     data[camelType].forEach((item) => {
       const id = `${item.id}`
       state = state.setIn(
