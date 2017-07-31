@@ -7,6 +7,7 @@ const POST_DETAIL_EXPRESSION = /^\/[\w-]+\/post\/.+/
 const AUTHENTICATION_ROUTES = [
   /^\/enter\b/,
   /^\/forgot-password\b/,
+  /^\/auth\/reset-my-password\b/,
   /^\/join\b/,
   /^\/signup\b/,
 ]
